@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Keith's Lisboa Birthday</title>
-</head>
-<body>
-    <ul class=adventures>
-        {% for entry in entries %}
-            {% if entry in (3, 6, 7) %}
-                <h1><a href="{{ url_for('show_adventure',
-                                        adventure_num=entry) }}">{{entry}} (optional)</a></h1>
-            {% else %}
-                <h1><a href="{{ url_for('show_adventure',
-                                        adventure_num=entry) }}">{{entry}}</a></h1>
-            {% endif %}
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+{{super()}}
+
+{% block title %}Mystery Revealed{% endblock %}
+<style>
+    .btn {
+        width:50%;
+        text-align: center;
+    }
+
+</style>
+
+{% block content %}
+
+    <div class="card text-center" style="max-width: 80%;">
+        <h3 class="card-header">Keith's Lisboa Birthday Adventure</h3>
+        <div class="card-block">
+            {% for entry in entries %}
+                {% if entry in (3, 6, 7) %}
+                    <a class="btn btn-info btn-lg"
+                       href="{{ url_for('show_adventure', adventure_num=entry) }}"
+                       role="button"
+                       style="width:50%;
+                              text-align: center;">{{entry}} (optional)</a>
+                    <br>
+                    <br>
+                {% else %}
+                    <a class="btn btn-primary btn-lg"
+                       href="{{ url_for('show_adventure',adventure_num=entry) }}"
+                       role="button"
+                       style="width:50%;
+                              text-align: center;">{{entry}}</a>
+                    <br>
+                    <br>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}}
