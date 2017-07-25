@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adventure Time</title>
+</head>
+<body>
+  <h1>{{entries.coordinates}}</h1>
+  <iframe src={{entries.map_link}} width="400" height="300" frameborder="0" style="border:0"></iframe>
+  <h1><a href="{{entries.directions_link}}">Indicação</a></h1>
+  <h1><a href="{{ url_for('show_adventure_reveal', adventure_num=entries.order) }}">Mostre-me</a></h1>
+</body>
+</html>

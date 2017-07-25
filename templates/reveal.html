@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mystery Revealed</title>
+</head>
+<body>
+    <h1>{{entries.reveal_name}}</h1>
+    <img src="{{entries.reveal_image}}">
+    <h2><a href="{{entries.reveal_maps_link}}">{{entries.reveal_address}}</a></h2>
+    <p>{{entries.reveal_text}}</p>
+    <br>
+    <h2><a href="{{ url_for('adventure_list') }}">Próximo</a></h2>
+</body>
+</html>
