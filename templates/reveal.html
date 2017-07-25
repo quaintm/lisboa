@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mystery Revealed</title>
-</head>
-<body>
+
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Mystery Revealed {% endblock %}
+
+{% import "bootstrap/fixes.html" as fixes %}
+{% block head %}
+{{super()}}
+
+{#- Docs: http://pythonhosted.org/Flask-Bootstrap/macros.html#fixes
+   The sample application already contains the required static files. #}
+{{fixes.ie8()}}
+{%- endblock %}
+
+{% block content %}
+
+
+<div class="container">
     <h1>{{entries.reveal_name}}</h1>
     <img src="{{entries.reveal_image}}">
-    <h2><a href="{{entries.reveal_maps_link}}">{{entries.reveal_address}}</a></h2>
+    <br>
+    <a class="btn btn-info" href="{{entries.reveal_maps_link}}" role="button">{{entries.reveal_address}}</a>
+    <br>
+    <br>
     <p>{{entries.reveal_text}}</p>
     <br>
-    <h2><a href="{{ url_for('adventure_list') }}">Próximo</a></h2>
-</body>
-</html>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('adventure_list') }}" role="button">Próximo</a>
+</div>
+{% endblock %}

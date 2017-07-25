@@ -1,6 +1,15 @@
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
+
 from adventure_details import a_dict
-app = Flask(__name__)
+
+
+def create_app():
+    this_app = Flask(__name__)
+    Bootstrap(this_app)
+    return this_app
+
+app = create_app()
 
 
 @app.route('/')
