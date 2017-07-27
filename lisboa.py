@@ -14,7 +14,7 @@ app = create_app()
 
 @app.route('/')
 def adventure_list():
-    return render_template('lisboa.html', entries=range(1, 8))
+    return render_template('lisboa.html', entries=a_dict)
 
 
 @app.route('/<adventure_num>')

@@ -9,17 +9,8 @@
         <h3 class="card-header">Keith's Lisboa Birthday Adventure</h3>
         <div class="card-block">
             {% for entry in entries %}
-                {% if entry in (3, 6, 7) %}
-                    <a class="btn btn-info btn-lg"
-                       href="{{ url_for('show_adventure', adventure_num=entry) }}"
-                       role="button"
-                       style="width:50%;
-                              text-align: center;">{{entry}} (optional)</a>
-                    <br>
-                    <br>
-                {% else %}
-                    <a class="btn btn-primary btn-lg"
-                       href="{{ url_for('show_adventure',adventure_num=entry) }}"
+                    <a class="btn btn-{{ entry.button_type }} btn-lg"
+                       href="{{ url_for('show_adventure',adventure_num=entry.order) }}"
                        role="button"
                        style="width:50%;
                               text-align: center;">{{entry}}</a>
