@@ -17,6 +17,11 @@ def adventure_list():
     return render_template('lisboa.html', entries=a_dict)
 
 
+@app.route('/intro')
+def intro():
+    return render_template('intro.html')
+
+
 @app.route('/<adventure_num>')
 def show_adventure(adventure_num):
     return render_template('adventure.html', entries=a_dict[str(adventure_num)])

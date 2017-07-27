@@ -25,13 +25,13 @@
 
 <div class="container" style="vertical-align: middle; max-width: 100%; max-height: 100%;">
     <div class="card text-center" style="max-width: 100%;">
-        <h3 class="card-header">Mystery Adventure #{{entries.order}}</h3>
+        <h3 class="card-header" style="background-color: #e0f7fa">Mystery Adventure #{{entries.order}}</h3>
         <div class="card-block">
             <h4 class="card-title">{{entries.coordinates}}</h4>
             <a href="{{entries.directions_link}}" class="btn btn-success btn-lg">Directions</a>
         </div>
         <div class="google-maps">
-        <iframe src={{entries.map_link}} alt="Next adventure" width="400" height="300" frameborder="0" style="border:0;"></iframe>
+        <iframe src="{{entries.map_link}}" width="400" height="300" frameborder="0" style="border:0;"></iframe>
         </div>
     </div>
     <div class="card text-center" style="max-width: 100%; border: 0px">

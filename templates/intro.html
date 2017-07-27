@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{{super()}}
+
+{% block title %}Keith's Lisboa Birthday Adventure{% endblock %}
+
+{% block content %}
+
+<div class="container" style="vertical-align: middle; max-width: 100%; max-height: 100%;">
+    <div class="card text-left" style="max-width: 100%;">
+        <h3 class="card-header" style="text-align: center; background-color: #e0f7fa">Keith's Lisbon Birthday Adventure</h3>
+        <div class="card-block">
+            <h4 class="card-title">Welcome to the Birthday Adventure App!</h4>
+            <br>
+            <p class="card-text">This app contains a list of activites designed to be done
+                in order, but if you want to skip ahead, go for it.</p>
+            <hr width=20%>
+            <p class="card-text">Each activity is presented in two parts: <b>The Adventure</b> and <b>The Reveal</b>.</p>
+            <p class="card-text"><b>The Adventure</b> displays GPS coordinates and directions from
+                the previous location. When you think you've reached
+                your mystery destination, tap Reveal.</p>
+            <p class="card-text"><b>The Reveal</b> contains the name, address, and maps link to your destination, plus Monica color commentary.</p>
+            <hr width=20%>
+            <p class="card-text">The entire set of adventures spans lunch, afternoon exploring, dinner, and after-dinner outings. No pressure to do it all, they're just suggestions.</p>
+            <p class="card-text">Happy Birthday!<p>
+        </div>
+    </div>
+    <div class="card text-center" style="max-width: 100%; border: 0px">
+        <div class="card-block">
+            <a href="{{ url_for('adventure_list') }}" class="btn btn-primary btn-lg">Start</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

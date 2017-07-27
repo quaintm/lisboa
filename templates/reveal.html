@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container" style="vertical-align: middle; max-width: 100%; max-height: 100%;">
     <div class="card text-center" style="max-width: 100%; vertical-align: middle;">
-      <h3 class="card-header">Mystery Adventure #{{entries.order}}</h3>
+      <h3 class="card-header" style="background-color: #e0f7fa">Mystery Adventure #{{entries.order}}</h3>
       <img class="img-responsive" src="{{entries.reveal_image}}" alt="Destination">
       <div class="card-block">
         <h4 class="card-title">{{entries.reveal_name}}</h4>
@@ -25,7 +25,7 @@
            href="{{ url_for('adventure_list') }}"
            role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
 
-        {% if entries.order != '7' %}
+        {% if entries.order != '14' %}
             <a class="btn btn-primary btn-lg"
                href="{{ url_for('show_adventure', adventure_num=(entries.order | int) + 1) }}"
                role="button"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
